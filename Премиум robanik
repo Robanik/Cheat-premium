@@ -1,0 +1,142 @@
+-- Ссылка на Библиотеку
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+--[[ 
+В данный момент стоит тема "RJTheme3" ,
+вы можете использовать другую тему приведённую ниже -
+"RJTheme1"
+"RJTheme2"
+"RJTheme3"
+"RJTheme4"
+"RJTheme5"
+"RJTheme6"
+"RJTheme7"
+"RJTheme8"
+//////////////////////////////////////////////////////////////////
+
+Что бы сделать свою тему , уберите часть скрипта из "комминтариев" ,
+который находится чуть ниже , и вместо "RJTheme3" в переменной "Windows" - 
+напишите переменную которая используется в скрипте чуть ниже .
+]]
+--[[
+local colors = {
+	-- Цвет фона у Секций
+    SchemeColor = Color3.fromRGB(150, 72, 148),
+	-- Цвет фона в правой части UI
+	Background = Color3.fromRGB(15,15,15),
+	-- Цвет фона в левой части UI
+    Header = Color3.fromRGB(15,15,15),
+	-- Цвет текста
+    TextColor = Color3.fromRGB(255,255,255),
+	-- Цвет фона у кнопок
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+]]
+-- Создать окно UI
+local Window = Library.CreateLib("weird strick dad", "RJTheme5")
+
+-- Секция
+local Tab = Window:NewTab("walk menu")
+
+-- Подсекция
+local Section = Tab:NewSection("автор(robanik)")
+
+-- Кнопка
+Section:NewButton("скорость 100", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+end)
+
+-- Кнопка
+Section:NewButton("скорость 50", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+end)
+
+-- Кнопка
+Section:NewButton("скорость 16", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+-- Секция
+local Tab = Window:NewTab("jump menu")
+
+-- Подсекция
+local Section = Tab:NewSection("автор(robanik)")
+
+-- Кнопка
+Section:NewButton("прыжок 100", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+end)
+
+-- Кнопка
+Section:NewButton("прыжок 50", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+-- Кнопка
+Section:NewButton("прыжок 16", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 16
+end)
+
+-- Секция
+local Tab = Window:NewTab("esp menu")
+
+-- Подсекция
+local Section = Tab:NewSection("автор(robanik)")
+
+-- Кнопка
+Section:NewButton("espbox", "ButtonInfo", function()
+    while wait(0.5) do
+    for i, childrik in ipairs(workspace:GetDescendants()) do
+        if childrik:FindFirstChild("Humanoid") then
+            if not childrik:FindFirstChild("EspBox") then
+                if childrik ~= game.Players.LocalPlayer.Character then
+                    local esp = Instance.new("BoxHandleAdornment",childrik)
+                    esp.Adornee = childrik
+                    esp.ZIndex = 0
+                    esp.Size = Vector3.new(5, 5, 5)
+                    esp.Transparency = 0.65
+                    esp.Color3 = Color3.fromRGB(255,48,48)
+                    esp.AlwaysOnTop = true
+                    esp.Name = "EspBox"
+                end
+            end
+        end
+    end
+end
+end)
+
+-- Секция
+local Tab = Window:NewTab("характеристика")
+
+-- Подсекция
+local Section = Tab:NewSection("автор(robanik)")
+
+-- Кнопка
+Section:NewButton("енергия", "ButtonInfo", function()
+Game.Players.LocalPlayer.Energy.Value = 1000
+end)
+
+-- Кнопка
+Section:NewButton("воды", "ButtonInfo", function()
+Game.Players.LocalPlayer.Thirst.Value = 1000
+end)
+
+-- Кнопка
+Section:NewButton("голод", "ButtonInfo", function()
+Game.Players.LocalPlayer.Hunger.Value = 1000
+end)
+
+-- Кнопка
+Section:NewButton("стамина", "ButtonInfo", function()
+Game.Players.LocalPlayer.Stamina.Value = 1000
+end)
+
+-- Кнопка
+Section:NewButton("огсихен(углерод)", "ButtonInfo", function()
+Game.Players.LocalPlayer.Oxygen.Value = 1000
+end)
+
+-- Секция
+local Tab = Window:NewTab("автор чита")
+
+-- Подсекция
+local Section = Tab:NewSection("ребята спасибо за использование чита❤️❤️❤️")
